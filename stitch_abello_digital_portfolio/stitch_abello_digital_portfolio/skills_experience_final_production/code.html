@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Professional Tech Stack | Cherry Mae R. Abello</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind Theme Config from DESIGN_SYSTEM_1 -->
+<script id="tailwind-config">
+          tailwind.config = {
+            darkMode: "class",
+            theme: {
+              extend: {
+                "colors": {
+                        "on-primary-container": "#9c9af4",
+                        "tertiary-fixed-dim": "#4cd7f6",
+                        "tertiary": "#4cd7f6",
+                        "surface-variant": "#323537",
+                        "secondary-fixed": "#dce1ff",
+                        "inverse-surface": "#e0e3e5",
+                        "secondary-container": "#264191",
+                        "primary": "#c3c0ff",
+                        "surface-bright": "#363a3b",
+                        "on-primary-fixed-variant": "#3e3c8f",
+                        "surface-container-highest": "#323537",
+                        "primary-fixed": "#e2dfff",
+                        "on-error": "#690005",
+                        "tertiary-fixed": "#acedff",
+                        "surface-container-low": "#191c1e",
+                        "surface-container": "#1d2022",
+                        "surface-container-lowest": "#0b0f10",
+                        "on-tertiary": "#003640",
+                        "on-secondary-fixed": "#00164e",
+                        "inverse-primary": "#5654a8",
+                        "tertiary-container": "#00404c",
+                        "on-tertiary-container": "#00b3d1",
+                        "on-secondary-container": "#9db2ff",
+                        "surface-tint": "#c3c0ff",
+                        "surface-container-high": "#272a2c",
+                        "secondary": "#b6c4ff",
+                        "primary-fixed-dim": "#c3c0ff",
+                        "on-primary-fixed": "#100563",
+                        "on-tertiary-fixed": "#001f26",
+                        "outline": "#918f9c",
+                        "on-tertiary-fixed-variant": "#004e5c",
+                        "background": "#101415",
+                        "on-primary": "#272377",
+                        "primary-container": "#312e81",
+                        "on-error-container": "#ffdad6",
+                        "on-secondary": "#05297a",
+                        "on-secondary-fixed-variant": "#264191",
+                        "secondary-fixed-dim": "#b6c4ff",
+                        "inverse-on-surface": "#2d3133",
+                        "outline-variant": "#474651",
+                        "on-background": "#e0e3e5",
+                        "error": "#ffb4ab",
+                        "error-container": "#93000a",
+                        "surface": "#101415",
+                        "on-surface-variant": "#c8c5d3",
+                        "on-surface": "#e0e3e5",
+                        "surface-dim": "#101415"
+                },
+                "borderRadius": {
+                        "DEFAULT": "0.5rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                },
+                "spacing": {
+                        "xl": "80px",
+                        "container-max": "1200px",
+                        "md": "24px",
+                        "xs": "4px",
+                        "lg": "48px",
+                        "base": "8px",
+                        "gutter": "24px",
+                        "sm": "12px"
+                },
+                "fontFamily": {
+                        "headline-md": ["Plus Jakarta Sans"],
+                        "headline-lg": ["Plus Jakarta Sans"],
+                        "headline-lg-mobile": ["Plus Jakarta Sans"],
+                        "display": ["Plus Jakarta Sans"],
+                        "label-sm": ["Plus Jakarta Sans"],
+                        "body-md": ["Plus Jakarta Sans"],
+                        "body-lg": ["Plus Jakarta Sans"],
+                        "label-md": ["Plus Jakarta Sans"]
+                },
+                "fontSize": {
+                        "headline-md": ["24px", {"lineHeight": "1.3", "fontWeight": "600"}],
+                        "headline-lg": ["40px", {"lineHeight": "1.2", "letterSpacing": "-0.01em", "fontWeight": "700"}],
+                        "headline-lg-mobile": ["32px", {"lineHeight": "1.2", "fontWeight": "700"}],
+                        "display": ["64px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "800"}],
+                        "label-sm": ["12px", {"lineHeight": "1.2", "fontWeight": "700"}],
+                        "body-md": ["16px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                        "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                        "label-md": ["14px", {"lineHeight": "1.4", "letterSpacing": "0.05em", "fontWeight": "600"}]
+                }
+              },
+            },
+          }
+        </script>
+<style>
+        body {
+            background-color: #101415;
+            color: #e0e3e5;
+            overflow-x: hidden;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            min-height: 100dvh;
+        }
+
+        .glass-card {
+            background: rgba(29, 32, 34, 0.4);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+
+        .glass-card:hover {
+            transform: translateY(-4px);
+            border-color: rgba(76, 215, 246, 0.3);
+            box-shadow: 0 10px 30px -10px rgba(76, 215, 246, 0.2);
+        }
+
+        .reveal {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: all 0.6s ease-out;
+        }
+
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .skill-progress-bg {
+            background: rgba(255, 255, 255, 0.05);
+            height: 6px;
+            border-radius: 99px;
+            overflow: hidden;
+        }
+
+        .skill-progress-fill {
+            background: linear-gradient(90deg, #264191 0%, #4cd7f6 100%);
+            height: 100%;
+            border-radius: 99px;
+            position: relative;
+        }
+
+        @keyframes shimmer {
+            0% { transform: translateX(-100%); }
+            100% { transform: translateX(100%); }
+        }
+
+        .skill-progress-fill::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+            animation: shimmer 2s infinite;
+        }
+
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background selection:bg-tertiary/30">
+<!-- Navigation Drawer (Desktop) -->
+<nav class="fixed left-0 top-0 w-72 h-screen z-50 p-md hidden lg:flex flex-col bg-surface-container-high/80 backdrop-blur-2xl border-r border-white/10">
+<div class="flex items-center gap-base mb-xl">
+<div class="w-12 h-12 rounded-full overflow-hidden border-2 border-tertiary p-0.5">
+<img alt="Cherry Mae R. Abello" class="w-full h-full object-cover rounded-full" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCKJFYs4nmaI6vuPFqW_anbVqMqrbj1vfgI5N3n9f0cquSsX8aw3iTx1Erd1cZt4h2n8fZfrk_VVqna8i97VQW2QlpPPexmQnM3sirz26xU2XWVmmC5Kfpc1BCt6N9EerhwwVR0o3Sg8SeOZmYbmtjKbvfBXIuFn7Cvdt-SqMXPw0uNTottgWI97lFpmsXSJ1NzYHRSIP9uJwkmmCvvNyJAIVsWhhFWU6-rwmknwksf0169vh5C5humuhctYw5LJGvkZtOw1aC-oj9v"/>
+</div>
+<div>
+<h2 class="text-on-surface font-display font-bold text-headline-md leading-none">Cherry Mae</h2>
+<p class="text-tertiary text-label-sm mt-xs">ERP &amp; Web Dev</p>
+</div>
+</div>
+<div class="flex flex-col gap-sm flex-1">
+<a class="flex items-center gap-md p-md text-on-surface-variant hover:text-tertiary hover:bg-white/5 transition-all duration-300 rounded-lg" href="#">
+<span class="material-symbols-outlined" data-icon="home">home</span>
+<span class="text-label-md">Home</span>
+</a>
+<a class="flex items-center gap-md p-md text-on-surface-variant hover:text-tertiary hover:bg-white/5 transition-all duration-300 rounded-lg" href="#">
+<span class="material-symbols-outlined" data-icon="settings_suggest">settings_suggest</span>
+<span class="text-label-md">Services</span>
+</a>
+<a class="flex items-center gap-md p-md text-on-surface-variant hover:text-tertiary hover:bg-white/5 transition-all duration-300 rounded-lg" href="#">
+<span class="material-symbols-outlined" data-icon="grid_view">grid_view</span>
+<span class="text-label-md">Portfolio</span>
+</a>
+<a class="flex items-center gap-md p-md bg-tertiary/10 text-tertiary rounded-lg font-bold" href="#">
+<span class="material-symbols-outlined" data-icon="history_edu">history_edu</span>
+<span class="text-label-md">Experience</span>
+</a>
+<a class="flex items-center gap-md p-md text-on-surface-variant hover:text-tertiary hover:bg-white/5 transition-all duration-300 rounded-lg" href="#">
+<span class="material-symbols-outlined" data-icon="mail">mail</span>
+<span class="text-label-md">Contact</span>
+</a>
+</div>
+</nav>
+<!-- Top App Bar (Mobile) -->
+<header class="lg:hidden fixed top-0 w-full z-50 bg-surface/80 backdrop-blur-xl border-b border-white/10 h-16 px-gutter flex justify-between items-center">
+<div class="flex items-center gap-sm">
+<span class="material-symbols-outlined text-tertiary" data-icon="terminal">terminal</span>
+<span class="text-headline-md font-display font-extrabold tracking-tighter text-on-surface">CMRA.DEV</span>
+</div>
+<button class="text-tertiary p-2 rounded-full hover:bg-white/5 active:scale-95 transition-all">
+<span class="material-symbols-outlined" data-icon="menu">menu</span>
+</button>
+</header>
+<!-- Main Content -->
+<main class="lg:ml-72 min-h-screen pt-24 lg:pt-lg px-gutter pb-xl max-w-container-max mx-auto">
+<!-- Professional Tech Stack Section -->
+<section class="mb-xl">
+<header class="mb-lg reveal active">
+<span class="text-tertiary text-label-md font-bold uppercase tracking-widest mb-xs block">Expertise</span>
+<h1 class="text-headline-lg lg:text-display font-display text-on-surface mb-xs">Professional Tech Stack</h1>
+<p class="text-body-lg text-outline max-w-2xl">A curated suite of technologies leveraged to build resilient enterprise systems and high-performance digital experiences.</p>
+</header>
+<div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-md">
+<!-- ERP & Business Systems -->
+<div class="glass-card p-md rounded-xl reveal active" style="transition-delay: 50ms;">
+<div class="flex items-center gap-base mb-md text-tertiary">
+<span class="material-symbols-outlined text-3xl" data-icon="business_center">business_center</span>
+<h3 class="font-headline-md text-on-surface">ERP &amp; Business</h3>
+</div>
+<div class="space-y-base">
+<div class="space-y-xs">
+<div class="flex justify-between text-label-sm">
+<span class="text-on-surface-variant">ERPNext / Frappe Framework</span>
+<span class="text-tertiary font-bold">95%</span>
+</div>
+<div class="skill-progress-bg">
+<div class="skill-progress-fill" style="width: 95%;"></div>
+</div>
+</div>
+<div class="space-y-xs">
+<div class="flex justify-between text-label-sm">
+<span class="text-on-surface-variant">Process Optimization</span>
+<span class="text-tertiary font-bold">90%</span>
+</div>
+<div class="skill-progress-bg">
+<div class="skill-progress-fill" style="width: 90%;"></div>
+</div>
+</div>
+<div class="flex flex-wrap gap-xs pt-base">
+<span class="px-3 py-1 bg-white/5 border border-white/10 text-on-surface-variant text-[10px] uppercase font-bold tracking-wider rounded-full whitespace-nowrap">CRM</span>
+<span class="px-3 py-1 bg-white/5 border border-white/10 text-on-surface-variant text-[10px] uppercase font-bold tracking-wider rounded-full whitespace-nowrap">Inventory</span>
+<span class="px-3 py-1 bg-white/5 border border-white/10 text-on-surface-variant text-[10px] uppercase font-bold tracking-wider rounded-full whitespace-nowrap">Finance</span>
+</div>
+</div>
+</div>
+<!-- Core Programming -->
+<div class="glass-card p-md rounded-xl reveal active" style="transition-delay: 100ms;">
+<div class="flex items-center gap-base mb-md text-tertiary">
+<span class="material-symbols-outlined text-3xl" data-icon="code">code</span>
+<h3 class="font-headline-md text-on-surface">Core Stack</h3>
+</div>
+<div class="space-y-base">
+<div class="space-y-xs">
+<div class="flex justify-between text-label-sm">
+<span class="text-on-surface-variant">Python (Backend)</span>
+<span class="text-tertiary font-bold">88%</span>
+</div>
+<div class="skill-progress-bg">
+<div class="skill-progress-fill" style="width: 88%;"></div>
+</div>
+</div>
+<div class="space-y-xs">
+<div class="flex justify-between text-label-sm">
+<span class="text-on-surface-variant">JS / TypeScript</span>
+<span class="text-tertiary font-bold">92%</span>
+</div>
+<div class="skill-progress-bg">
+<div class="skill-progress-fill" style="width: 92%;"></div>
+</div>
+</div>
+<div class="flex flex-wrap gap-xs pt-base">
+<span class="px-3 py-1 bg-white/5 border border-white/10 text-on-surface-variant text-[10px] uppercase font-bold tracking-wider rounded-full whitespace-nowrap">MariaDB/SQL</span>
+<span class="px-3 py-1 bg-white/5 border border-white/10 text-on-surface-variant text-[10px] uppercase font-bold tracking-wider rounded-full whitespace-nowrap">REST APIs</span>
+<span class="px-3 py-1 bg-white/5 border border-white/10 text-on-surface-variant text-[10px] uppercase font-bold tracking-wider rounded-full whitespace-nowrap">Git</span>
+</div>
+</div>
+</div>
+<!-- Modern Web & Cloud -->
+<div class="glass-card p-md rounded-xl reveal active" style="transition-delay: 150ms;">
+<div class="flex items-center gap-base mb-md text-tertiary">
+<span class="material-symbols-outlined text-3xl" data-icon="rocket_launch">rocket_launch</span>
+<h3 class="font-headline-md text-on-surface">Web &amp; Infrastructure</h3>
+</div>
+<div class="space-y-base">
+<div class="space-y-xs">
+<div class="flex justify-between text-label-sm">
+<span class="text-on-surface-variant">Frontend Frameworks</span>
+<span class="text-tertiary font-bold">85%</span>
+</div>
+<div class="skill-progress-bg">
+<div class="skill-progress-fill" style="width: 85%;"></div>
+</div>
+</div>
+<div class="space-y-xs">
+<div class="flex justify-between text-label-sm">
+<span class="text-on-surface-variant">Cloud Infrastructure</span>
+<span class="text-tertiary font-bold">80%</span>
+</div>
+<div class="skill-progress-bg">
+<div class="skill-progress-fill" style="width: 80%;"></div>
+</div>
+</div>
+<div class="flex flex-wrap gap-xs pt-base">
+<span class="px-3 py-1 bg-white/5 border border-white/10 text-on-surface-variant text-[10px] uppercase font-bold tracking-wider rounded-full whitespace-nowrap">Tailwind</span>
+<span class="px-3 py-1 bg-white/5 border border-white/10 text-on-surface-variant text-[10px] uppercase font-bold tracking-wider rounded-full whitespace-nowrap">GCP</span>
+<span class="px-3 py-1 bg-white/5 border border-white/10 text-on-surface-variant text-[10px] uppercase font-bold tracking-wider rounded-full whitespace-nowrap">Docker</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Footer -->
+<footer class="w-full mt-xl border-t border-white/5 flex flex-col md:flex-row justify-between items-center py-lg gap-md text-center md:text-left">
+<div>
+<p class="text-label-md font-display font-bold text-tertiary">CMRA.DEV</p>
+<p class="text-outline text-label-sm mt-xs">© 2024 Cherry Mae R. Abello. All rights reserved.</p>
+</div>
+<div class="flex gap-md">
+<a class="text-outline hover:text-tertiary transition-colors text-label-md" href="#">LinkedIn</a>
+<a class="text-outline hover:text-tertiary transition-colors text-label-md" href="#">GitHub</a>
+<a class="text-outline hover:text-tertiary transition-colors text-label-md" href="#">Portfolio</a>
+</div>
+</footer>
+</main>
+<!-- Scroll Reveal Logic -->
+<script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const reveals = document.querySelectorAll('.reveal');
+            
+            const revealOnScroll = () => {
+                const windowHeight = window.innerHeight;
+                const revealPoint = 80;
+                
+                reveals.forEach(el => {
+                    const revealTop = el.getBoundingClientRect().top;
+                    if (revealTop < windowHeight - revealPoint) {
+                        el.classList.add('active');
+                    }
+                });
+            };
+
+            window.addEventListener('scroll', revealOnScroll);
+            revealOnScroll(); // Trigger initial check
+        });
+    </script>
+</body></html>
