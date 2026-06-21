@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Portfolio | Cherry Mae R. Abello</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "inverse-on-surface": "#2d3133",
+                        "secondary-fixed": "#dce1ff",
+                        "error": "#ffb4ab",
+                        "on-secondary-fixed-variant": "#264191",
+                        "on-error-container": "#ffdad6",
+                        "on-error": "#690005",
+                        "on-primary-container": "#9c9af4",
+                        "surface-variant": "#323537",
+                        "surface-container-low": "#191c1e",
+                        "on-primary-fixed": "#100563",
+                        "surface-tint": "#c3c0ff",
+                        "secondary-fixed-dim": "#b6c4ff",
+                        "on-secondary-fixed": "#00164e",
+                        "secondary-container": "#264191",
+                        "primary-fixed-dim": "#c3c0ff",
+                        "on-primary": "#272377",
+                        "primary-fixed": "#e2dfff",
+                        "on-tertiary": "#003640",
+                        "on-secondary": "#05297a",
+                        "primary": "#c3c0ff",
+                        "secondary": "#b6c4ff",
+                        "outline-variant": "#474651",
+                        "error-container": "#93000a",
+                        "primary-container": "#312e81",
+                        "on-tertiary-fixed": "#001f26",
+                        "on-surface": "#e0e3e5",
+                        "inverse-surface": "#e0e3e5",
+                        "surface-dim": "#101415",
+                        "on-secondary-container": "#9db2ff",
+                        "on-tertiary-fixed-variant": "#004e5c",
+                        "tertiary-container": "#00404c",
+                        "on-background": "#e0e3e5",
+                        "surface-container-highest": "#323537",
+                        "outline": "#918f9c",
+                        "background": "#101415",
+                        "tertiary-fixed-dim": "#4cd7f6",
+                        "surface-container-lowest": "#0b0f10",
+                        "on-tertiary-container": "#00b3d1",
+                        "tertiary-fixed": "#acedff",
+                        "surface-container-high": "#272a2c",
+                        "surface": "#101415",
+                        "on-primary-fixed-variant": "#3e3c8f",
+                        "inverse-primary": "#5654a8",
+                        "surface-container": "#1d2022",
+                        "tertiary": "#4cd7f6",
+                        "on-surface-variant": "#c8c5d3",
+                        "surface-bright": "#363a3b"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "base": "8px",
+                        "xs": "4px",
+                        "gutter": "24px",
+                        "sm": "12px",
+                        "lg": "48px",
+                        "container-max": "1200px",
+                        "xl": "80px",
+                        "md": "24px"
+                    },
+                    "fontFamily": {
+                        "display": ["Plus Jakarta Sans"],
+                        "body-md": ["Plus Jakarta Sans"],
+                        "headline-lg": ["Plus Jakarta Sans"],
+                        "body-lg": ["Plus Jakarta Sans"],
+                        "label-sm": ["Plus Jakarta Sans"],
+                        "headline-md": ["Plus Jakarta Sans"],
+                        "headline-lg-mobile": ["Plus Jakarta Sans"],
+                        "label-md": ["Plus Jakarta Sans"]
+                    },
+                    "fontSize": {
+                        "display": ["64px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "800"}],
+                        "body-md": ["16px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                        "headline-lg": ["40px", {"lineHeight": "1.2", "letterSpacing": "-0.01em", "fontWeight": "700"}],
+                        "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                        "label-sm": ["12px", {"lineHeight": "1.2", "fontWeight": "700"}],
+                        "headline-md": ["24px", {"lineHeight": "1.3", "fontWeight": "600"}],
+                        "headline-lg-mobile": ["32px", {"lineHeight": "1.2", "fontWeight": "700"}],
+                        "label-md": ["14px", {"lineHeight": "1.4", "letterSpacing": "0.05em", "fontWeight": "600"}]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        body {
+            background-color: #101415;
+            color: #e0e3e5;
+            overflow-x: hidden;
+            min-height: 100dvh;
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            display: inline-block;
+            vertical-align: middle;
+        }
+        .glass-card {
+            background: rgba(29, 32, 34, 0.4);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .glass-card:hover {
+            background: rgba(39, 42, 44, 0.6);
+            border-color: rgba(195, 192, 255, 0.3);
+            box-shadow: 0 0 40px rgba(195, 192, 255, 0.1);
+        }
+        .text-glow {
+            text-shadow: 0 0 12px rgba(195, 192, 255, 0.4);
+        }
+        .reveal-content {
+            opacity: 0;
+            transform: translateY(10px);
+            transition: all 0.4s ease;
+        }
+        .glass-card:hover .reveal-content {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .project-image-container {
+            position: relative;
+            background: #0b0f10;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            aspect-ratio: 16/9;
+        }
+        @media (min-width: 1024px) {
+            .project-image-container-featured {
+                aspect-ratio: auto;
+            }
+        }
+    </style>
+</head>
+<body class="font-body-md text-body-md antialiased">
+<!-- Ambient Background Shader -->
+<div class="fixed inset-0 z-[-1] overflow-hidden pointer-events-none">
+<div class="absolute inset-0 bg-gradient-to-br from-primary/5 via-transparent to-tertiary/5"></div>
+</div>
+<!-- Navigation Shell -->
+<header class="fixed top-0 w-full z-50 bg-surface/80 backdrop-blur-xl border-b border-white/5">
+<div class="flex justify-between items-center h-16 md:h-20 px-gutter max-w-container-max mx-auto">
+<div class="flex items-center gap-base">
+<div class="w-8 h-8 rounded-full overflow-hidden border border-primary/20 bg-surface-container">
+<img alt="Cherry Mae R. Abello" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCKJFYs4nmaI6vuPFqW_anbVqMqrbj1vfgI5N3n9f0cquSsX8aw3iTx1Erd1cZt4h2n8fZfrk_VVqna8i97VQW2QlpPPexmQnM3sirz26xU2XWVmmC5Kfpc1BCt6N9EerhwwVR0o3Sg8SeOZmYbmtjKbvfBXIuFn7Cvdt-SqMXPw0uNTottgWI97lFpmsXSJ1NzYHRSIP9uJwkmmCvvNyJAIVsWhhFWU6-rwmknwksf0169vh5C5humuhctYw5LJGvkZtOw1aC-oj9v"/>
+</div>
+<span class="text-headline-md font-display font-extrabold tracking-tighter text-on-surface">CMRA.DEV</span>
+</div>
+<nav class="hidden md:flex items-center gap-lg">
+<a class="text-on-surface-variant font-medium hover:text-primary transition-colors" href="#">Home</a>
+<a class="text-primary font-bold border-b-2 border-primary py-1" href="#">Portfolio</a>
+<a class="text-on-surface-variant font-medium hover:text-primary transition-colors" href="#">Experience</a>
+<a class="text-on-surface-variant font-medium hover:text-primary transition-colors" href="#">Contact</a>
+</nav>
+<div class="flex items-center gap-md">
+<button class="material-symbols-outlined text-outline hover:text-primary p-2 transition-all md:hidden">menu</button>
+<a class="hidden md:flex items-center gap-xs text-primary font-bold hover:opacity-80 transition-opacity" href="#">
+<span class="material-symbols-outlined">mail</span>
+<span class="text-label-md">HIRE ME</span>
+</a>
+</div>
+</div>
+</header>
+<!-- Main Content -->
+<main class="pt-24 md:pt-32 pb-xl px-gutter max-w-container-max mx-auto">
+<!-- Header Section -->
+<section class="mb-xl text-center md:text-left">
+<span class="inline-block px-3 py-1 rounded-full bg-primary/10 border border-primary/20 text-primary text-label-sm mb-md uppercase tracking-wider">Showcase</span>
+<h1 class="font-display text-headline-lg-mobile md:text-display text-on-surface mb-sm">Digital <span class="text-primary text-glow">Solutions</span></h1>
+<p class="max-w-2xl text-body-lg text-on-surface-variant leading-relaxed">BSIT Graduate &amp; Full-stack Developer crafting enterprise-grade ERP systems and web applications with modern architectural patterns.</p>
+</section>
+<!-- Bento Grid Layout -->
+<div class="grid grid-cols-1 md:grid-cols-12 gap-md md:gap-gutter">
+<!-- Featured Project: Okbot Cave -->
+<div class="md:col-span-12 lg:col-span-12 glass-card rounded-lg overflow-hidden group">
+<div class="flex flex-col lg:flex-row h-full">
+<div class="lg:w-2/3 project-image-container project-image-container-featured border-b lg:border-b-0 lg:border-r border-white/5 bg-surface-container-lowest p-4 md:p-8">
+<img alt="Suaon-Okbot Cave Website" class="w-full h-full object-contain block transition-transform duration-700 group-hover:scale-[1.02]" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAQKfz7Y_LLdnRQj80MQ5zNtgSN90PmVB8DnxLdIiF6AHAY9b2RUo7zhshQ8L9v9pRdudHoE0pbTRmB6XYuyBdDpOzIA-fRH7sodnSYrnKO_8XXiclhd8Rf6NPyCPwC_Nmb2n69ikvWZ0zG4TUF06QkjMo_EuwUq3fIzs4zctPbi5HPD9skQE1lYDTqnRRHx9AHTLGPvzhGTXbx09Iz64Zmra96k_IQLLETVPu8a5nDm0zMRtNYjPy6LmZBF8Da6XIeTRaHkVUd6ccx"/>
+</div>
+<div class="lg:w-1/3 p-md md:p-lg flex flex-col justify-between">
+<div>
+<span class="text-label-sm text-tertiary mb-sm inline-block font-bold">WEB DEVELOPMENT</span>
+<h2 class="font-headline-md text-on-surface mb-sm">Suaon–Okbot Cave</h2>
+<p class="text-body-md text-on-surface-variant mb-md leading-relaxed">A digital tourism portal featuring QR ticketing, interactive galleries, and a comprehensive admin dashboard for tourism management.</p>
+<div class="flex flex-wrap gap-xs mb-lg">
+<span class="text-label-sm bg-white/5 px-2 py-1 rounded text-outline">React</span>
+<span class="text-label-sm bg-white/5 px-2 py-1 rounded text-outline">Laravel</span>
+<span class="text-label-sm bg-white/5 px-2 py-1 rounded text-outline">QR Integration</span>
+</div>
+</div>
+<button class="w-full py-3 px-md rounded-lg bg-primary-container text-primary font-bold transition-all hover:bg-primary-container/80 flex items-center justify-center gap-sm">
+<span class="material-symbols-outlined">visibility</span> View Case Study
+                        </button>
+</div>
+</div>
+</div>
+<!-- Project: ERPNext Integration -->
+<div class="md:col-span-12 lg:col-span-8 glass-card rounded-lg overflow-hidden group flex flex-col">
+<div class="project-image-container flex-grow bg-surface-container-lowest p-4 md:p-8">
+<img alt="ERPNext Custom Module" class="w-full h-full object-contain block transition-transform duration-700 group-hover:scale-[1.02]" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAs75WAiMsgHAPHxAQiey0Yysd_53uvEMCBvk-cfZfMxEKcA3Ux8WzpD82HCvktoYul6xgEw8Vwqoz19D9swDXlzKTWM-tyPzdHDuvV328i3SqMkpdrpc62yzP0oAeh2emiuoN-o2XqwB-GBcY--Dsj0i1a0UJaU1wF9s6wKMvhToLE64wVVKDsdb-e_kh4yfvCSErScwer-XnzGjqYSlARfcz0ddPZwedhkLByS-45wvvWKQW0Gpn4oD1z8d666F9H4O3LiAaqyDQ4"/>
+</div>
+<div class="p-md md:p-lg border-t border-white/5 bg-surface-container/30">
+<div class="flex flex-col md:flex-row md:items-center justify-between gap-md">
+<div>
+<h3 class="font-headline-md text-on-surface mb-xs">ERP Integration</h3>
+<p class="text-on-surface-variant text-body-md">Custom Frappe modules for streamlined supplier and procurement management.</p>
+</div>
+<div class="flex items-center gap-md">
+<span class="text-label-sm text-outline px-2 py-1 bg-white/5 rounded whitespace-nowrap">Frappe / Python</span>
+<a class="text-primary font-bold flex items-center gap-xs hover:underline whitespace-nowrap" href="#">DETAILS <span class="material-symbols-outlined text-[18px]">arrow_forward</span></a>
+</div>
+</div>
+</div>
+</div>
+<!-- Bento Side Column -->
+<div class="md:col-span-12 lg:col-span-4 flex flex-col gap-md md:gap-gutter">
+<!-- Concise Core Stack -->
+<div class="glass-card rounded-lg p-md md:p-lg flex flex-col items-center text-center flex-grow">
+<span class="material-symbols-outlined text-primary text-[40px] mb-sm">code_blocks</span>
+<h3 class="font-headline-md text-on-surface mb-md">Core Stack</h3>
+<div class="flex flex-wrap justify-center gap-2">
+<span class="px-3 py-1 rounded bg-secondary-container/20 text-secondary text-label-sm border border-secondary/10">PHP Laravel</span>
+<span class="px-3 py-1 rounded bg-secondary-container/20 text-secondary text-label-sm border border-secondary/10">ERPNext</span>
+<span class="px-3 py-1 rounded bg-secondary-container/20 text-secondary text-label-sm border border-secondary/10">Vue.js</span>
+<span class="px-3 py-1 rounded bg-secondary-container/20 text-secondary text-label-sm border border-secondary/10">SQL Server</span>
+</div>
+</div>
+<!-- Concise Efficiency Card -->
+<div class="glass-card rounded-lg p-md md:p-lg flex flex-col justify-center">
+<div class="flex items-center gap-sm mb-base">
+<span class="material-symbols-outlined text-tertiary">insights</span>
+<h4 class="text-on-surface font-bold uppercase tracking-widest text-label-sm">Efficiency First</h4>
+</div>
+<p class="text-on-surface-variant text-body-md">Optimizing data flows and UX for high-concurrency enterprise systems.</p>
+</div>
+</div>
+<div class="md:col-span-12 lg:col-span-8 glass-card rounded-lg overflow-hidden group flex flex-col"><div class="project-image-container flex-grow bg-surface-container-lowest p-4 md:p-8"><img alt="Project Exhibit Poster" class="w-full h-full object-contain block transition-transform duration-700 group-hover:scale-[1.02]" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB7j9DBZBSaWt_3PPVoUDr-fW13NspMDg4zqfuY_4Fou4Ndbh4X5rHd8YcxdTWwq67EaEeKIBAKgEbXhqoeYKAZ29py21GtJGJgxRQ2R6Hw4LfFb9GCVeym7Pa91JtErzeo-vRKXg5-j272fJrIpaGgtlKT6ZzGBDSrPPx9td1UUPdmEgG2tRzRoRLcv7tin5GCm_otsoXPIT8aKhrql_VamqBHuuII3ZnA6ZPBOO5wh1uW0rJJezf1STb-m9uVSsyLG9NSAHMTJF0o"/></div><div class="p-md md:p-lg border-t border-white/5 bg-surface-container/30"><div class="flex flex-col md:flex-row md:items-center justify-between gap-md"><div><h3 class="font-headline-md text-on-surface mb-xs">Project Exhibit Poster</h3><p class="text-on-surface-variant text-body-md">A professional poster created for our project exhibit, showcasing the visual identity and core concepts of our capstone project.</p></div><div class="flex items-center gap-md"><span class="text-label-sm text-outline px-2 py-1 bg-white/5 rounded whitespace-nowrap">Graphic Design</span></div></div></div></div><div class="md:col-span-12 lg:col-span-12 glass-card rounded-lg overflow-hidden group"><div class="flex flex-col lg:flex-row h-full"><div class="lg:w-2/3 project-image-container project-image-container-featured border-b lg:border-b-0 lg:border-r border-white/5 bg-surface-container-lowest p-4 md:p-8"><img alt="Capstone Project" class="w-full h-full object-contain block transition-transform duration-700 group-hover:scale-[1.02]" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD4n7G1cFcTt_9RGpwX3hP2_7B9HFAtRBFiy3Q5Ug8k-v_t79AbfIzAwExny6lTCCo2lDc4JXXnH7AyWf8ZYODdQmh5pw39OcBBv06mcyE7vVKlPnHWsQVZ0J874gtQEtPb53toljEnEGLPWVyhAYa0AITvKrrVJjEPVFDIYBwootip3YCrDPJMUvWVVaW8wVBjx8siNiFIjsTiN5edAf9VSWZJkEQXMcNu6B0kk24hC1pION9U-siEVFOnGosftLOzudVupQTzyhbv"/></div><div class="lg:w-1/3 p-md md:p-lg flex flex-col justify-between"><div><span class="text-label-sm text-tertiary mb-sm inline-block font-bold">CAPSTONE PROJECT</span><h2 class="font-headline-md text-on-surface mb-sm">OCR-Based Document Tracking and Archival System</h2><p class="text-body-md text-on-surface-variant mb-md leading-relaxed">A comprehensive digital solution for city government HR. My role: Head of Documentation, responsible for detailed system specifications, user manuals, and technical reports.</p><div class="flex flex-wrap gap-xs mb-lg"><span class="text-label-sm bg-white/5 px-2 py-1 rounded text-outline">AI &amp; Analytics</span><span class="text-label-sm bg-white/5 px-2 py-1 rounded text-outline">Documentation</span></div></div><button class="w-full py-3 px-md rounded-lg bg-primary-container text-primary font-bold transition-all hover:bg-primary-container/80 flex items-center justify-center gap-sm"><span class="material-symbols-outlined">description</span> View Documentation</button></div></div></div></div>
+</main>
+<!-- Footer -->
+<footer class="bg-surface-container-lowest border-t border-white/5 py-lg px-gutter mt-xl">
+<div class="max-w-container-max mx-auto flex flex-col md:flex-row justify-between items-center gap-md">
+<div class="flex items-center gap-sm">
+<div class="w-6 h-6 rounded-full overflow-hidden">
+<img alt="" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCKJFYs4nmaI6vuPFqW_anbVqMqrbj1vfgI5N3n9f0cquSsX8aw3iTx1Erd1cZt4h2n8fZfrk_VVqna8i97VQW2QlpPPexmQnM3sirz26xU2XWVmmC5Kfpc1BCt6N9EerhwwVR0o3Sg8SeOZmYbmtjKbvfBXIuFn7Cvdt-SqMXPw0uNTottgWI97lFpmsXSJ1NzYHRSIP9uJwkmmCvvNyJAIVsWhhFWU6-rwmknwksf0169vh5C5humuhctYw5LJGvkZtOw1aC-oj9v"/>
+</div>
+<div>
+<span class="text-label-md font-display font-bold text-primary mb-xs block">CMRA.DEV</span>
+<p class="text-label-sm text-outline">© 2024 Cherry Mae R. Abello | BSIT.</p>
+</div>
+</div>
+<div class="flex gap-lg">
+<a class="text-outline hover:text-on-surface transition-colors" href="#">LinkedIn</a>
+<a class="text-outline hover:text-on-surface transition-colors" href="#">GitHub</a>
+<a class="text-outline hover:text-on-surface transition-colors" href="#">Contact</a>
+</div>
+</div>
+</footer>
+<script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const cards = document.querySelectorAll('.glass-card');
+            cards.forEach((card, index) => {
+                card.style.opacity = '0';
+                card.style.transform = 'translateY(20px)';
+                setTimeout(() => {
+                    card.style.transition = 'all 0.6s cubic-bezier(0.2, 0.8, 0.2, 1)';
+                    card.style.opacity = '1';
+                    card.style.transform = 'translateY(0)';
+                }, 100 + (index * 100));
+            });
+        });
+    </script>
+</body></html>
